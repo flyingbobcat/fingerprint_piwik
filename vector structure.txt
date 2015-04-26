@@ -1,0 +1,49 @@
+############################################
+vectors = [
+	{
+		'id'			: <arbitrary identifier, preferrably of type str>,
+		'desc'			: <a short description of the vector, e.g. 'Changes in Module API'>,
+		'related'		: <optional. related thing in Piwik, e.g. 'module', 'image', 'jsfile'>,
+		'url'			: <the url that is appended to the base url, e.g. 'piwik.php?a=5'>,
+		'answers'			: [
+[
+<list of affected versions>,
+('equals'|'contains'|'matches'|'hash'|'status'|'header field exists'|'header field equals'|'header field contains'),
+<parameter>
+],
+<more records>	
+	},
+]
+############################################
+Here an example (unrelated to Piwik itself):
+############################################
+vectors = [
+	{
+		'id'			: 'testvector',
+		'desc'			: 'A test vector to show the structure',
+		'related'		: 'vector structure',
+		'url'			: 'fruit.php',
+		'answers'			: [
+[
+['1.0.0'],
+'contains',
+'apple'
+],
+[
+['2.0.0'],
+'contains',
+'banana'
+],
+[
+['1.1.0','1.2.0'],
+'contains',
+'tomato'
+],
+[
+['1.0.0','2.0.0'],
+'status',
+200
+],
+	},
+]
+############################################
